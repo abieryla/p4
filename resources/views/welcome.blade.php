@@ -1,45 +1,20 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.master')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+@section('title')
+       No Peeking Wish List 
+@stop
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+@section('content')
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
-</html>
+        <h1>No Peeking Wish List</h1>
+	<p>Do you hate knowing all your gifts before you even open them? Do you wish you had more self control and didn't "peek"? The No Peeking Wish List 
+	is for you! </br> It's simple...
+	<ol>
+		<li> Create wish lists for all your important holidays and events (weddings, birthdays, baby showers, etc)
+		<li> Create a "circle" of friends and family to share your list with and they will be emailed the instructions on how to access your lists. 
+		You'll never see what has been purchased on your list - only the circle will.
+		<li> Get started <a href="register"> Register</a>.  Already have an account? <a href="Login"> Login</a>. 
+	</ol>
+	</p>
+@stop
