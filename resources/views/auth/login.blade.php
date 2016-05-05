@@ -10,7 +10,7 @@
 	<p> Need to register for an account? <a href='/register'>Register here.</a> </p>
         <h1>Login</h1>
 
-	<form method='POST' action='/wishlist'>
+	<form method='POST' action='/login'>
             {{ csrf_field() }}
 	    <div class="errors">
             {{$errors->first('paragraph') }} <br>	    
@@ -18,7 +18,7 @@
 	    Email:
 	    <input type='text' name='email' size='50' value='{{ old('email') }}'><br>
 	    Password:
-	    <input type='password' name='pswd1' size='50' value='{{ old('pswd1') }}'><br>
+	    <input type='password' name='password' size='50' value='{{ old('password') }}'><br>
 	    CIRCLE passcode (if applicable):
 	    <input type='password' name='passcode' size='50' value='{{ old('passcode') }}'><br>
 

@@ -11,6 +11,10 @@ class WishlistController extends Controller {
 		return view('wishlist.home');
 	}
 
+	public function getWishlist(){
+		return view('wishlist.home');
+	}
+
 	public function getCreate() {
 		return view('wishlist.create');
 	}

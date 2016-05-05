@@ -26,7 +26,6 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
 
 
 	Route::get('/login', 'Auth\AuthController@getLogin');
@@ -36,9 +35,10 @@ Route::group(['middleware' => ['web']], function () {
 	Route::post('/register', 'Auth\AuthController@postRegister');
 
 	Route::get('/logout', 'Auth\AuthController@logout');
-	Route::post('/wishlist', 'WishlistController@postWishlist');
 
 	Route::group(['middleware' => 'auth'], function() {
+		Route::post('/wishlist', 'WishlistController@postWishlist');
+		Route::get('/wishlist', 'WishlistController@getWishlist');
 		Route::get('/wishlist/create', 'WishlistController@getCreate'); 
 	});
 
@@ -53,4 +53,3 @@ Route::group(['middleware' => ['web']], function () {
 /	}
 /	return;
 */
-});

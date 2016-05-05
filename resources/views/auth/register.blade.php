@@ -22,9 +22,9 @@
 	    Email:
 	    <input type='text' name='email' size='50' value='{{ old('email') }}'><br>
 	    Password:
-	    <input type='password' name='pswd1' size='50' value='{{ old('pswd1') }}'><br>
+	    <input type='password' name='password' size='50' value='{{ old('password') }}'><br>
 	    Re-enter password again:
-	    <input type='password' name='pswd2' size='50' value='{{ old('pswd2') }}'><br>
+	    <input type='password' name='password_confirmation' size='50' value='{{ old('password_confirmation') }}'><br>
 	    Enter CIRCLE passcode (if applicable):
 	    <input type='password' name='passcode' size='50' value='{{ old('passcode') }}'><br>
 
