@@ -14,7 +14,7 @@
 		<li> Create wish lists for all your important holidays and events (weddings, birthdays, baby showers, etc)
 		<li> Create a "circle" of friends and family to share your list with and they will be emailed the instructions on how to access your lists. 
 		You'll never see what has been purchased on your list - only the circle will.
-		<li> Get started <a href="register"> Register</a>.  Already have an account? <a href="Login"> Login</a>. 
+		<li> Get started <a href="/register"> Register</a>.  Already have an account? <a href="/login"> Login</a>. 
 	</ol>
 	</p>
 @stop
