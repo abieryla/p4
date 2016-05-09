@@ -13,7 +13,7 @@
 	<form method='POST' action='/login'>
             {{ csrf_field() }}
 	    <div class="errors">
-            {{$errors->first('paragraph') }} <br>	    
+            {{$errors->first('password') }} <br>	    
 	    </div>
 	    Email:
 	    <input type='text' name='email' size='50' value='{{ old('email') }}'><br>
@@ -26,7 +26,7 @@
 	
 	@if(count($errors) > 0)
 		<div class="errors">
-                <p>Please correct errors above and try again</p>
+                <p>Email and password do not match. Please try again.</p>
 		</div>
         @endif
 	

@@ -2,12 +2,14 @@
 
 
 @section('title')
-       No Peeking Wish List 
+       No Peeking Wishlist 
 @stop
 
 @section('content')
-
-        <h1>No Peeking Wish List</h1>
-	<p> <a href='/logout'>Logout</a></p>
-	<p> It worked - you are logged in. </p>
+	<div class="row"> <a href="/wishlist">Home</a> | <a href='/logout'>Logout</a> </div>
+        <h1>My Wishlists</h1>
+	@if(sizeof($wishlist) == 0)
+		You do not currently have any wishlists setup. <a href='/wishlist/create'>Create a wishlist now!</a>
+	@endif
+        <h1>My Circle Wishlists</h1>
 @stop

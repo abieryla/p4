@@ -40,6 +40,7 @@ Route::get('/', function () {
 		Route::post('/wishlist', 'WishlistController@postWishlist');
 		Route::get('/wishlist', 'WishlistController@getWishlist');
 		Route::get('/wishlist/create', 'WishlistController@getCreate'); 
+		Route::post('/wishlist/create', 'WishlistController@postCreate'); 
 	});
 
 

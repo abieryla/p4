@@ -10,7 +10,7 @@
 	<p>Already have an account? <a href='/login'>Login here.</a></p>
         <h1>Register for an account</h1>
 
-	<form method='POST' action='/wishlist'>
+	<form method='POST' action='/register'>
             {{ csrf_field() }}
 	    <div class="errors">
             {{$errors->first('paragraph') }} <br>	    
