@@ -9,7 +9,8 @@ class ConnectItemsWishlist extends Migration
     {
 	Schema::table('wishlist', function (Blueprint $table) {
 		$table->integer('item_id')->unsigned();
-		$table->foreign('item_id')->references('id')->on('items');
+		$table->foreign('item_id')->references('id')->on('item');
+	});
     }
 		
 
@@ -18,5 +19,6 @@ class ConnectItemsWishlist extends Migration
 	Schema::table('wishlist', function (Blueprint $table) {
 		$table->dropForeign('wishlist_item_id_foreign');
 		$table->dropColumn('item_id');
+	});
     }
 }

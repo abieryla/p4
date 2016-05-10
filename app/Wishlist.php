@@ -9,4 +9,8 @@ class Wishlist extends Model
     public function user() {
     	return $this->belongsTo('\App\User');
     }
+
+    public function wishlist() {
+	return $this->belongsTo('\App\Wishlist');
+    }
 }

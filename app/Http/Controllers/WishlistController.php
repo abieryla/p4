@@ -24,8 +24,17 @@ class WishlistController extends Controller {
 		return view('wishlist.create');
 	}
 	
-	public function postCreate() {
-		return view('wishlist.home');
+	public function postCreate(Request $request) {
+
+		$this->validate($request, ['wishlist_name' => required]);
+
+		$data = $request->only('wishlist_name');
+		$data['user_id'] = \Auth::id();
+
+		$wishlist = new \App\Wishlist($data);
+		$wishlist->save();
+
+		return redirect('/home');
 	}
 
 	public function getAdd() {
