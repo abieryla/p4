@@ -8,7 +8,7 @@ class CreateItemsTable extends Migration
 
     public function up()
     {
-        Schema::create('item', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
     
             $table->increments('id');
             $table->timestamps();
@@ -23,6 +23,6 @@ class CreateItemsTable extends Migration
     }
     public function down()
     {
-        Schema::drop('item');
+        Schema::drop('items');
     }
 }
