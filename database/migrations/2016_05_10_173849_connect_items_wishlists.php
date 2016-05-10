@@ -7,17 +7,17 @@ class ConnectItemsWishlists extends Migration
 {
     public function up()
     {
-	Schema::table('wishlists', function (Blueprint $table) {
-		$table->integer('item_id')->unsigned();
-		$table->foreign('item_id')->references('id')->on('items');
+	Schema::table('items', function (Blueprint $table) {
+		$table->integer('wishlist_id')->unsigned();
+		$table->foreign('wishlist_id')->references('id')->on('wishlists');
 	});
     }
 		
     public function down()
     {
-	Schema::table('wishlists', function (Blueprint $table) {
-		$table->dropForeign('wishlists_item_id_foreign');
-		$table->dropColumn('item_id');
+	Schema::table('items', function (Blueprint $table) {
+		$table->dropForeign('items_wishlist_id_foreign');
+		$table->dropColumn('wishlst_id');
 	});
     }
 }
