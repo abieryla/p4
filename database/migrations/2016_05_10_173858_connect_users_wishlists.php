@@ -6,8 +6,8 @@ use Illuminate\Database\Migrations\Migration;
 class ConnectUsersWishlists extends Migration
 {
         public function up()
-        {                                                                 }}
-            Schema::table('wishlist', function (Blueprint $table) {
+        {                                                                   
+            Schema::table('wishlists', function (Blueprint $table) {
 
                 $table->integer('user_id')->unsigned();
 
@@ -18,9 +18,11 @@ class ConnectUsersWishlists extends Migration
 
         public function down()
         {
-            Schema::table('wishlist', function (Blueprint $table) {
+            Schema::table('wishlists', function (Blueprint $table) {
 
                 $table->dropForeign('wishlist_user_id_foreign');
 
                 $table->dropColumn('user_id');
             });
+	}
+}

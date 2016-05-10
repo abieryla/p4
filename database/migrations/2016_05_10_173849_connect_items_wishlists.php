@@ -9,7 +9,7 @@ class ConnectItemsWishlists extends Migration
     {
 	Schema::table('wishlists', function (Blueprint $table) {
 		$table->integer('item_id')->unsigned();
-		$table->foreign('item_id')->references('id')->on('item');
+		$table->foreign('item_id')->references('id')->on('items');
 	});
     }
 		
