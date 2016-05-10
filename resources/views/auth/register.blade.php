@@ -2,7 +2,6 @@
 
 
 @section('title')
-        No Peeking Wish List   
 @stop
 
 @section('content')
@@ -25,8 +24,6 @@
 	    <input type='password' name='password' size='50' value='{{ old('password') }}'><br>
 	    Re-enter password again:
 	    <input type='password' name='password_confirmation' size='50' value='{{ old('password_confirmation') }}'><br>
-	    Enter CIRCLE passcode (if applicable):
-	    <input type='password' name='passcode' size='50' value='{{ old('passcode') }}'><br>
 
             <input type='submit' value='Enter' ><br>
 	

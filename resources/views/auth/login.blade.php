@@ -2,7 +2,6 @@
 
 
 @section('title')
-        No Peeking Wish List   
 @stop
 
 @section('content')
@@ -19,8 +18,6 @@
 	    <input type='text' name='email' size='50' value='{{ old('email') }}'><br>
 	    Password:
 	    <input type='password' name='password' size='50' value='{{ old('password') }}'><br>
-	    CIRCLE passcode (if applicable):
-	    <input type='password' name='passcode' size='50' value='{{ old('passcode') }}'><br>
 
             <input type='submit' value='Enter' ><br>
 	

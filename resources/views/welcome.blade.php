@@ -2,7 +2,6 @@
 
 
 @section('title')
-       No Peeking Wish List 
 @stop
 
 @section('content')

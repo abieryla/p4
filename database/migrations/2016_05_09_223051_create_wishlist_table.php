@@ -11,11 +11,6 @@ public function up()
 
         $table->increments('id');
         $table->timestamps();
-        $table->string('item');
-        $table->string('description');
-        $table->decimal('price', 10,2);
-        $table->string('purchase_link');
-        $table->integer('number_wanted');
         $table->string('wishlist_name');
 
     });

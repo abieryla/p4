@@ -39,8 +39,15 @@ Route::get('/', function () {
 	Route::group(['middleware' => 'auth'], function() {
 		Route::post('/wishlist', 'WishlistController@postWishlist');
 		Route::get('/wishlist', 'WishlistController@getWishlist');
+
 		Route::get('/wishlist/create', 'WishlistController@getCreate'); 
 		Route::post('/wishlist/create', 'WishlistController@postCreate'); 
+
+		Route::get('/wishlist/add', 'WishlistController@getAdd'); 
+		Route::post('/wishlist/add', 'WishlistController@postAdd'); 
+
+		Route::get('wishlist/connect', 'WishlistController@getConnect');
+		Route::post('wishlist/connect', 'WishlistController@postConnect');
 	});
 
 
