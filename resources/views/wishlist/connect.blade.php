@@ -8,7 +8,7 @@
 	<div class="row"> <a href="/wishlist">Home</a> | <a href='/logout'>Logout</a> </div>
         <h1>Connect to a Circle wishlist</h1>
 
-	    <form method='POST' action='wishlist/connect'>
+	    <form method='POST' action='/wishlist/connect'>
             {{ csrf_field() }}
             <div class="errors">
             {{$errors->first('paragraph') }} <br>

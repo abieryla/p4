@@ -26,7 +26,7 @@ class WishlistController extends Controller {
 	
 	public function postCreate(Request $request) {
 
-		$this->validate($request, ['wishlist_name' => required]);
+		$this->validate($request, ['wishlist_name' => 'required|min:1']);
 
 		$data = $request->only('wishlist_name');
 		$data['user_id'] = \Auth::id();
