@@ -34,7 +34,7 @@ class WishlistController extends Controller {
 		$wishlist = new \App\Wishlist($data);
 		$wishlist->save();
 
-		return redirect('/home');
+		return redirect('/wishlist');
 	}
 
 	public function getAdd() {
