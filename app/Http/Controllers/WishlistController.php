@@ -23,7 +23,7 @@ class WishlistController extends Controller {
 	
 	public function postCreate(Request $request) {
 
-		$this->validate($request, ['wishlist_name' => 'required|min:1']);
+		$this->validate($request, ['wishlist_name' => 'required']);
 
 		$data = $request->only('wishlist_name');
 		$data['user_id'] = \Auth::id();
@@ -48,6 +48,8 @@ class WishlistController extends Controller {
 			'number_wanted' => 'required|integer']);
 
 		$data = $request->only('item','description','price','purchase_link','number_wanted');
+		$data['wishlist_id'] = \App\Wishlist::id();
+
 		$item = new \App\Item($data);
 		$item->save();
 
