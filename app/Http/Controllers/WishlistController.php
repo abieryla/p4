@@ -17,6 +17,26 @@ class WishlistController extends Controller {
 		return view('wishlist.home')->with('wishlists', $wishlists);
 	}
 
+	public function getConfirmDelete($id = null) {
+		$wishlist = \App\Wishlist::find($id);
+
+		$items_to_remove = \App\Item::find($wishlist_id);
+
+
+		return view('wishlist.confirmdelete')->with('wishlist', $wishlist);
+
+	}
+
+	public function getDelete($id = null) {
+		$wishlist = \App\Wishlist::find($id);
+
+		$wishlist->delete();
+
+		\Session::flash('message', $wishlist->wishlist_name.' was deleted.');
+		return redirect('/wishlist');
+	}	
+	
+
 	public function getCreate() {
 		return view('wishlist.create');
 	}
@@ -34,9 +54,13 @@ class WishlistController extends Controller {
 		return redirect('/wishlist');
 	}
 
-	public function getAdd() {
+	public function getAdd($id) {
+		
+		$wishlist = \App\Wishlist::find($id);
+		
 		return view('wishlist.add');
 	}
+
 	
 	public function postAdd(Request $request) {
 
@@ -47,14 +71,14 @@ class WishlistController extends Controller {
 			'purchase_link' => 'required|url',
 			'number_wanted' => 'required|integer']);
 
-		$data = $request->only('item','description','price','purchase_link','number_wanted','wishlist_id');
-		##$data['wishlist_id'] = \App\Wishlist::id();
-		$data['wishlist_id'] = <?php $_GET['var'] ?>;
+		$wishlist_id = $request->id; 
 
+		$data = $request->only('item','description','price','purchase_link','number_wanted');
+		$data['wishlist_id'] = $wishlist_id;
 		$item = new \App\Item($data);
 		$item->save();
 
-		return view('wishlist.add');
+		return redirect('/wishlist');
 	}
 
 

@@ -1,4 +1,5 @@
 @extends('layouts.master')
+
 @section('title')
 @stop
 
@@ -20,10 +21,11 @@
      			       </h4>
 	      		       <h6>
 			       <div class="col-sm-1">
-			           <a href='/wishlist/add' class="btn btn-primary btn-sm" value='{{ $wishlist->id }}'>Add item</a>
+			           <a href='/wishlist/add/{{$wishlist->id}}' class="btn btn-success btn-sm">Add item</a>
+			       </form>
 			       </div>
 			       <div class="col-sm-1">                  			       
-                                   <a href='/wishlist/delete' class="btn btn-primary btn-sm">Delete wishlist</a>
+                                   <a href='/wishlist/confirmdelete/{{$wishlist->id}}' class="btn btn-warning btn-sm">Delete wishlist</a>
 			       </div>                             
 			       </h6>
 			    </div></br>
