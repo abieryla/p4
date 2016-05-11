@@ -11,13 +11,10 @@ class WishlistController extends Controller {
 		return view('wishlist.home');
 	}
 
-##	public function getWishlist(Request $request){
-##	 	$wishlist = \App\Wishlist::where('user_id', '=', \Auth::id())->orderBy('id','DESC')->get();
-##		return view('wishlist.home')->with('wishlist',$wishlist);
-##	}
 
 	public function getWishlist(){
-		return view('wishlist.home');
+		$wishlists = \App\Wishlist::where('user_id', '=', \Auth::id())->orderBy('id', 'DESC')->get();
+		return view('wishlist.home')->with('wishlists', $wishlists);
 	}
 
 	public function getCreate() {
@@ -41,9 +38,23 @@ class WishlistController extends Controller {
 		return view('wishlist.add');
 	}
 	
-	public function postAdd() {
+	public function postAdd(Request $request) {
+
+		$this->validate($request, [
+			'item' => 'required',
+			'description' => 'required',
+			'price' => 'required|numeric',
+			'purchase_link' => 'required|url',
+			'number_wanted' => 'required|integer']);
+
+		$data = $request->only('item','description','price','purchase_link','number_wanted');
+		$item = new \App\Item($data);
+		$item->save();
+
 		return view('wishlist.add');
 	}
+
+
 
 
 	public function getConnect() {
