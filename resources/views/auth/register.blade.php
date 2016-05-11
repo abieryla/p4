@@ -20,9 +20,9 @@
 	<form method='POST' action='/register'>
             {{ csrf_field() }}
             First Name: 
-	    <input type='text' name='first' size='25' value='{{ old('first') }}'><br>
+	    <input type='text' name='firstname' size='25' value='{{ old('firstname') }}'><br>
 	    Last Name:
-	    <input type='text' name='last' size='25' value='{{ old('last') }}'><br>
+	    <input type='text' name='lastname' size='25' value='{{ old('lastname') }}'><br>
 	    Email:
 	    <input type='text' name='email' size='50' value='{{ old('email') }}'><br>
 	    Password:
