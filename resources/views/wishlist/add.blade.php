@@ -1,6 +1,5 @@
 @extends('layouts.master')
 
-
 @section('title')
 @stop
 
@@ -23,6 +22,7 @@
             <input type='text' name='purchase_link' size='50' value='{{ old('purchase_link') }}'><br>
 	    Number requested:
             <input type='number' name='number_wanted' size='50' value='{{ old('number_wanted') }}'><br>
+	    <input type="hidden" name='var' value='$_GET['value']/>
 
 
             <input type='submit' value='Enter' ><br>

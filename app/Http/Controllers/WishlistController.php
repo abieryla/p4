@@ -47,8 +47,9 @@ class WishlistController extends Controller {
 			'purchase_link' => 'required|url',
 			'number_wanted' => 'required|integer']);
 
-		$data = $request->only('item','description','price','purchase_link','number_wanted');
-		$data['wishlist_id'] = \App\Wishlist::id();
+		$data = $request->only('item','description','price','purchase_link','number_wanted','wishlist_id');
+		##$data['wishlist_id'] = \App\Wishlist::id();
+		$data['wishlist_id'] = <?php $_GET['var'] ?>;
 
 		$item = new \App\Item($data);
 		$item->save();
