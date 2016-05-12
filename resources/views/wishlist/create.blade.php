@@ -16,5 +16,5 @@
             Wishlist name: 
             <input type='text' name='wishlist_name' size='50' value='{{ old('wishlist_name') }}'><br>
 
-            <input type='submit' value='Enter' class='btn btn-primary'><br>
+            <input type='submit' value='Create wishlist' class='btn btn-primary'><br>
 @stop

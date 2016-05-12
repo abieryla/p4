@@ -43,6 +43,9 @@ Route::get('/', function () {
 		Route::get('/wishlist/create', 'WishlistController@getCreate'); 
 		Route::post('/wishlist/create', 'WishlistController@postCreate'); 
 
+		Route::get('/wishlist/edit/{id?}', 'WishlistController@getEdit'); 
+		Route::post('/wishlist/edit/{id?}', 'WishlistController@postEdit'); 
+
 		Route::get('/wishlist/add/{id?}', 'WishlistController@getAdd'); 
 		Route::post('/wishlist/add/{id?}', 'WishlistController@postAdd'); 
 

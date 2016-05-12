@@ -69,6 +69,39 @@ class WishlistController extends Controller {
 		return redirect('/wishlist');
 	}
 
+
+	public function getEdit($id) {
+
+		$item = \App\Item::find($id);
+
+		return view('wishlist.edit')->with('item', $item);;
+	}
+
+	public function postEdit(Request $request) {
+
+		$this->validate($request, [
+			'item' => 'required',
+			'description' => 'required',
+			'price' => 'required|numeric',
+			'purchase_link' => 'required|url',
+			'number_wanted' => 'required|integer']);
+
+		$item = \App\Item::find($request->id);
+
+		$item->item = $request->item;
+		$item->description = $request->description;
+		$item->price = $request->price;
+		$item->purchase_link = $request->purchase_link;
+		$item->number_wanted = $request->number_wanted;
+
+		$item->save();
+
+		return redirect('/wishlist');
+	}
+
+
+	
+
 	public function getAdd($id) {
 		
 		$wishlist = \App\Wishlist::find($id);

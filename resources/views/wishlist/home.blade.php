@@ -30,7 +30,7 @@
 			       </div>
 
 			       <div class="col-sm-2">                  			       
-                                   <a href='/wishlist/confirmdelete/{{$wishlist->id}}' class="btn btn-warning btn-sm">Delete wishlist</a>
+                                   <a href='/wishlist/confirmdelete/{{$wishlist->id}}' class="btn btn-danger btn-sm">Delete wishlist</a>
 			       </div>                             
 			       </h6>
 			    </div></br>
