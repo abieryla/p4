@@ -14,7 +14,10 @@ class WishlistController extends Controller {
 
 	public function getWishlist(){
 		$wishlists = \App\Wishlist::where('user_id', '=', \Auth::id())->orderBy('id', 'DESC')->get();
-		return view('wishlist.home')->with('wishlists', $wishlists);
+		$circles = \App\Circle::where('circle_email', '=', \Auth::user()->email)->orderBy('id', 'DESC')->get();
+		return view('wishlist.home')
+			->with('circles', $circles)
+			->with('wishlists', $wishlists);
 	}
 
 	public function getShow($id){
@@ -25,6 +28,13 @@ class WishlistController extends Controller {
 			->with('wishlist', $wishlist);
 	}
 
+	public function getShowCircle($id){
+		$wishlist = \App\Wishlist::find($id);
+		$items = \App\Item::where('wishlist_id', '=', $id)->orderBy('id', 'DESC')->get();
+		return view('wishlist.showcircle')
+			->with('items', $items)
+			->with('wishlist', $wishlist);
+	}
 
 
 	public function getConfirmDelete($id = null) {
@@ -36,9 +46,24 @@ class WishlistController extends Controller {
 
 	public function getDelete($id = null) {
 		$wishlist = \App\Wishlist::find($id);
+		$items = \App\Item::where('wishlist_id', '=', $wishlist->id)->get();
+		$circles = \App\Circle::where('wishlist_id', '=', $wishlist->id)->get();
+
+
+		if($items != null) {
+			foreach($items as $item) {
+				$item->delete();
+			}
+		}
+
+		if($circles != null) {
+			foreach($circles as $circle) {
+				$circle->delete();
+			}
+		}
+
 		
-		
-		$wishlist->delete();
+		$wishlist->delete();	
 
 		return redirect('/wishlist');
 	}	
@@ -129,15 +154,33 @@ class WishlistController extends Controller {
 		return redirect('/wishlist');
 	}
 
+	public function getShare($id) {
 
-
-
-	public function getConnect() {
-		return view('wishlist.connect');
+		$wishlist = \App\Wishlist::find($id);
+		return view('wishlist.share')->with('wishlist', $wishlist);
 	}
 
-	public function postConnect() {
-		return view('wishlist.home');
+
+	public function postShare(Request $request) {
+
+		$this->validate($request, [
+		'name' => 'required',
+		'circle_email' => 'required']);
+	                                                                                              
+		$wishlist_id = $request->id; 
+	                                                                                              
+		$data = $request->only('name','circle_email');
+		$data['wishlist_id'] = $wishlist_id;
+
+		$circle = new \App\Circle($data);
+		$circle->save();
+	                                                                                              
+		return redirect('/wishlist');
+
+
+
 	}
+
+
 }
 

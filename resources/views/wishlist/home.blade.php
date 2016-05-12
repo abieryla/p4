@@ -29,6 +29,10 @@
 			           <a href='/wishlist/add/{{$wishlist->id}}' class="btn btn-success btn-sm">Add item</a>
 			       </div>
 
+			       <div class="col-sm-2">
+				   <a href='/wishlist/share/{{$wishlist->id}}' class="btn btn-primary btn-sm">Share wishlist</a>
+			       </div>
+
 			       <div class="col-sm-2">                  			       
                                    <a href='/wishlist/confirmdelete/{{$wishlist->id}}' class="btn btn-danger btn-sm">Delete wishlist</a>
 			       </div>                             
@@ -38,5 +42,26 @@
 	@endif
 
         <h1>My Circle Wishlists</h1>
-		<p>You are not currently connected to a Circle. <a href='/wishlist/connect'>Connect to a Circle wishlist now!</a></p>
+
+	@if(sizeof($circles) == 0)
+	
+		<p>You are not currently connected to a Circle. You can only see wishlists that are shared with you. To allow your Circle to see your wishlists, 
+		share them above and ask your Circle of friends to share with you!</p>
+
+	@else 
+		@foreach($circles as $circle)
+			<div class="row">
+			<?php $circle_wishlist = \App\Wishlist::find($circle->wishlist_id); ?>
+			   <div class="col-sm-4">
+				<h5>{{ $circle->name }} shared {{$circle_wishlist->wishlist_name }} with you </h5>
+			   </div>
+		  	   <div class="col-sm-2">
+                                   <a href='/wishlist/showcircle/{{$circle->wishlist_id}}' class="btn btn-info btn-sm">View wishlist</a>
+			   </div>
+			</div>
+		@endforeach
+				
+	@endif
+
+
 @stop

@@ -41,6 +41,7 @@
 	           @if(count($errors) > 0)
 	           	Please fix above errors and try again.
 	           @endif
+	       </div>
 
 	    </form>
 @stop

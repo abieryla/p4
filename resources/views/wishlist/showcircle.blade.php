@@ -60,8 +60,7 @@
                                </div>
 
 			       <div class="col-sm-3">         	   				
-                                   <a href='/wishlist/edit/{{$item->id}}' class="btn btn-warning btn-xs">Edit item</a>
-                                   <a href='/wishlist/deleteitem/{{$item->id}}' class="btn btn-danger btn-xs">Delete item</a>
+                                   <a href='/wishlist/purchased/{{$item->id}}' class="btn btn-warning btn-xs">Did you purchase this?</a>
                         	</div>
 
 			       </h6>

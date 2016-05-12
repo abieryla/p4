@@ -17,5 +17,8 @@ class Wishlist extends Model
 	return $this->hasMany('App\Item');
     }
 
+    public function circle() {
+	return $this->hasMany('App\Circle');
+    }
 
 }

@@ -5,7 +5,7 @@
 
 @section('content')
 	<nav> <a href="/wishlist">Home</a> | <a href='/logout'>Logout</a> </nav>
-        <h1>Add an item to your wishlist</h1>
+        <h1>Edit an item in your wishlist</h1>
 
 	    <form method='POST' action='/wishlist/edit/{{ $item->id }}'>
             {{ csrf_field() }}
