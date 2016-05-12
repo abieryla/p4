@@ -16,8 +16,8 @@ the wishlist with family and friends. A user is only able to view wishlists that
 The best part is the logged in user never sees an updated version of what has been bought off his/her own
 wishlist, but users are able to update their connected Circle wishlists if they buy something off of it.
 
-References: For the design of this site I used on Bootstrap and I referenced class notes and Foobooks for 
-	    coding design.
+References: For the design of this site I used on Bootstrap. I referenced class notes and Foobooks for 
+	    coding design. I used dbdesigner.net to create my tables outline.
 
 #### Live URL link
 
@@ -30,4 +30,4 @@ https://github.com/abieryla/p4
 #### URL to Demo
 
 #### Table Outline
-![alt text](/Applications/MAMP/htdocs/p4/NoPeekingWishlist_tableOutline.png) 
+![alt text](/Applications/MAMP/htdocs/p4/NoPeekingWishlist_tableOutline.png "Table Outline")  
