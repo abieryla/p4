@@ -46,11 +46,14 @@ Route::get('/', function () {
 		Route::get('/wishlist/add/{id?}', 'WishlistController@getAdd'); 
 		Route::post('/wishlist/add/{id?}', 'WishlistController@postAdd'); 
 
+		Route::get('/wishlist/deleteitem/{id?}', 'WishlistController@getDeleteItem');
 		Route::get('/wishlist/delete/{id?}', 'WishlistController@getDelete');
 		Route::get('/wishlist/confirmdelete/{id?}', 'WishlistController@getConfirmDelete');
 
 		Route::get('wishlist/connect', 'WishlistController@getConnect');
 		Route::post('wishlist/connect', 'WishlistController@postConnect');
+
+		Route::get('wishlist/show/{id?}', 'WishlistController@getShow');
 	});
 
 

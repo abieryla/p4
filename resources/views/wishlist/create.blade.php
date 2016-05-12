@@ -11,10 +11,10 @@
 	    <form method='POST' action='/wishlist/create'>
             {{ csrf_field() }}
             <div class="errors">
-            {{$errors->first('paragraph') }} <br>
+            {{$errors->first('wishlist_name') }} <br>
             </div>
             Wishlist name: 
             <input type='text' name='wishlist_name' size='50' value='{{ old('wishlist_name') }}'><br>
 
-            <input type='submit' value='Enter' ><br>
+            <input type='submit' value='Enter' class='btn btn-primary'><br>
 @stop

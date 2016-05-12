@@ -19,12 +19,17 @@
 			           {{ $wishlist->wishlist_name}}
 			       </div>
      			       </h4>
+
 	      		       <h6>
-			       <div class="col-sm-1">
-			           <a href='/wishlist/add/{{$wishlist->id}}' class="btn btn-success btn-sm">Add item</a>
-			       </form>
+			       <div class="col-sm-2">
+			           <a href='/wishlist/show/{{$wishlist->id}}' class="btn btn-info btn-sm">View wishlist</a>
 			       </div>
-			       <div class="col-sm-1">                  			       
+
+			       <div class="col-sm-2">
+			           <a href='/wishlist/add/{{$wishlist->id}}' class="btn btn-success btn-sm">Add item</a>
+			       </div>
+
+			       <div class="col-sm-2">                  			       
                                    <a href='/wishlist/confirmdelete/{{$wishlist->id}}' class="btn btn-warning btn-sm">Delete wishlist</a>
 			       </div>                             
 			       </h6>

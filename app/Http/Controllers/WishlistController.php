@@ -17,11 +17,18 @@ class WishlistController extends Controller {
 		return view('wishlist.home')->with('wishlists', $wishlists);
 	}
 
+	public function getShow($id){
+		$wishlist = \App\Wishlist::find($id);
+		$items = \App\Item::where('wishlist_id', '=', $id)->orderBy('id', 'DESC')->get();
+		return view('wishlist.show')
+			->with('items', $items)
+			->with('wishlist', $wishlist);
+	}
+
+
+
 	public function getConfirmDelete($id = null) {
 		$wishlist = \App\Wishlist::find($id);
-
-		$items_to_remove = \App\Item::find($wishlist_id);
-
 
 		return view('wishlist.confirmdelete')->with('wishlist', $wishlist);
 
@@ -29,13 +36,21 @@ class WishlistController extends Controller {
 
 	public function getDelete($id = null) {
 		$wishlist = \App\Wishlist::find($id);
-
+		
+		
 		$wishlist->delete();
 
-		\Session::flash('message', $wishlist->wishlist_name.' was deleted.');
 		return redirect('/wishlist');
 	}	
-	
+
+	public function getDeleteItem($id) {
+		$item = \App\Item::find($id);
+
+		$item->delete();
+
+		return redirect('/wishlist');
+	}
+
 
 	public function getCreate() {
 		return view('wishlist.create');
@@ -58,7 +73,7 @@ class WishlistController extends Controller {
 		
 		$wishlist = \App\Wishlist::find($id);
 		
-		return view('wishlist.add');
+		return view('wishlist.add')->with('wishlist', $wishlist);
 	}
 
 	
