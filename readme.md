@@ -30,4 +30,4 @@ https://github.com/abieryla/p4
 #### URL to Demo
 
 #### Table Outline
-![alt text](Applications/MAMP/htdocs/p4/NoPeekingWishlist_tableOutline.png "Table Outline")  
+![alt text](screenshots/NoPeekingWishlist_tableOutline.png "Table Outline")  
