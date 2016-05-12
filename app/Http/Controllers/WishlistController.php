@@ -37,14 +37,14 @@ class WishlistController extends Controller {
 	}
 
 
-	public function getConfirmDelete($id = null) {
+	public function getConfirmDelete($id) {
 		$wishlist = \App\Wishlist::find($id);
 
 		return view('wishlist.confirmdelete')->with('wishlist', $wishlist);
 
 	}
 
-	public function getDelete($id = null) {
+	public function getDelete($id) {
 		$wishlist = \App\Wishlist::find($id);
 		$items = \App\Item::where('wishlist_id', '=', $wishlist->id)->get();
 		$circles = \App\Circle::where('wishlist_id', '=', $wishlist->id)->get();
@@ -118,6 +118,7 @@ class WishlistController extends Controller {
 		$item->price = $request->price;
 		$item->purchase_link = $request->purchase_link;
 		$item->number_wanted = $request->number_wanted;
+		$item->number_remaining = $request->number_wanted;
 
 		$item->save();
 
@@ -147,6 +148,7 @@ class WishlistController extends Controller {
 		$wishlist_id = $request->id; 
 
 		$data = $request->only('item','description','price','purchase_link','number_wanted');
+		$data['number_remaining'] = $request->number_wanted;
 		$data['wishlist_id'] = $wishlist_id;
 		$item = new \App\Item($data);
 		$item->save();
@@ -177,9 +179,27 @@ class WishlistController extends Controller {
 	                                                                                              
 		return redirect('/wishlist');
 
-
-
 	}
+
+	public function getPurchased($id) {
+
+		$item = \App\Item::find($id);
+
+		return view('wishlist.purchased')->with('item', $item);
+		
+	}
+
+	public function getUpdate($id) {
+
+		$item = \App\Item::find($id);
+		$updated_num = (($item->number_remaining) - 1);
+
+		$item->number_remaining = $updated_num;
+
+		$item->save();
+
+		return redirect('/wishlist');
+	}	
 
 
 }

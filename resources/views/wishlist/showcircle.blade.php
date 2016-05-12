@@ -29,8 +29,12 @@
 			Purchase Link
 		   </div>                             
 		 
-		   <div class="col-sm-2">
-			Item Requested
+		   <div class="col-sm-1">
+			Item wanted
+		   </div>
+
+		   <div class="col-sm-1">
+			Items still needed
 		   </div>
 	
 		   </h4>
@@ -55,11 +59,15 @@
                                    <a href='{{ $item->purchase_link}}'>click here to purchase</a>
 			       </div>                             
 			     
-  			       <div class="col-sm-2">
-                                    {{ $item->number_wanted }}
+  			       <div class="col-sm-1">
+                                    <span class="badge alert-success">{{ $item->number_wanted }}</span>
                                </div>
 
-			       <div class="col-sm-3">         	   				
+			       <div class="col-sm-1">
+                                   <span class="badge alert-danger">{{ $item->number_remaining }}</span>
+                               </div>
+
+			       <div class="col-sm-2">         	   				
                                    <a href='/wishlist/purchased/{{$item->id}}' class="btn btn-warning btn-xs">Did you purchase this?</a>
                         	</div>
 

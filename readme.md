@@ -1,27 +1,33 @@
-# Laravel PHP Framework
+Allyson Bieryla 
+================
+dwa15 Spring 2016 
+---------------
+### P4: No Peeking Wishlist                  
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+#### Project Description
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Project 4 is called No Peeking Wishlist. The purpose of this application is a website where you can create
+wishlists for yourself and share them with your friends and family (your circle). Users must create a login 
+identity to begin. Once logged in a user will be taken to their Home page which will display My Wishlists  
+(ones that the user created) and My Circle Wishlists (which is shared with the user by other users). A user is 
+able to create wishlists and delete them. Once a wishlist is created a user can add items, and items can be
+edited or deleted at any time. Finally, once a user is happy with the wishlist, they are then able to share  
+the wishlist with family and friends. A user is only able to view wishlists that are shared with him/her.
+The best part is the logged in user never sees an updated version of what has been bought off his/her own
+wishlist, but users are able to update their connected Circle wishlists if they buy something off of it.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+References: For the design of this site I used on Bootstrap and I referenced class notes and Foobooks for 
+	    coding design.
 
-## Official Documentation
+#### Live URL link
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+http://p4.abieryla.me
 
-## Contributing
+#### Github.com URL
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+https://github.com/abieryla/p4
 
-## Security Vulnerabilities
+#### URL to Demo
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+#### Table Outline
+![alt text](/Applications/MAMP/htdocs/NoPeekingWishlist_tableOutline.png)

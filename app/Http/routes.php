@@ -58,6 +58,9 @@ Route::get('/', function () {
 
 		Route::get('wishlist/share/{id?}', 'WishlistController@getShare');
 		Route::post('wishlist/share/{id?}', 'WishlistController@postShare');
+	
+		Route::get('wishlist/purchased/{id?}', 'WishlistController@getPurchased');
+		Route::get('wishlist/update/{id?}', 'WishlistController@getUpdate');
 	});
 
 
