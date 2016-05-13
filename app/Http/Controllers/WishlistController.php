@@ -255,22 +255,24 @@ class WishlistController extends Controller {
 	                                                                                              
 		$wishlist_id = $request->id; 
 		$circles = \App\Circle::where('circle_email', '=', $request->circle_email)->get();
-		
-		foreach($circles as $circle) {
-			if(($circle->wishlist_id) == ($wishlist_id)) {
-				\Session::flash('message', 'You have already shared this wishlist with '. $circle->circle_email);
-			}
-			else {
-	                                                                                              
-				$data = $request->only('name','circle_email');
-				$data['wishlist_id'] = $wishlist_id;
-
-				$circle = new \App\Circle($data);
-				$circle->save();
-
-				\Session::flash('message', 'Your wislist was shared');
+	
+		if($circles != null) {
+			foreach($circles as $circle) {
+				if(($circle->wishlist_id) == ($wishlist_id)) {
+					\Session::flash('message', 'You have already shared this wishlist with '. $circle->circle_email);
+					return redirect('/wishlist');
+					
+				}
 			}
 		}
+	                                                                                             
+		$data = $request->only('name','circle_email');
+		$data['wishlist_id'] = $wishlist_id;
+
+		$circle = new \App\Circle($data);
+		$circle->save();
+
+		\Session::flash('message', 'Your wislist was shared');
 
 		return redirect('/wishlist');
 
