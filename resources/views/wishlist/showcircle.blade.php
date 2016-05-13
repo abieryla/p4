@@ -68,7 +68,13 @@
                                </div>
 
 			       <div class="col-sm-2">         	   				
-                                   <a href='/wishlist/purchased/{{$item->id}}' class="btn btn-warning btn-xs">Did you purchase this?</a>
+				    @if(($item->number_remaining) == 0)
+                                   	<div class='btn-group'>
+						<button class='btn btn-danger btn-xs' type=button'>No more needed</button>
+					</div>
+				    @else
+                                   	<a href='/wishlist/purchased/{{$item->id}}' class="btn btn-warning btn-xs">Did you purchase this?</a>
+				    @endif
                         	</div>
 
 			       </h6>

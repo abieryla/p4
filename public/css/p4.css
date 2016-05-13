@@ -6,3 +6,10 @@ div.errors {
 nav {
 	display:block;      
 }
+
+div.flash {
+	width:100%;
+	text-align:center;
+	background-color:red;
+	font-weight:bold;
+}

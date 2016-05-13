@@ -4,6 +4,7 @@
 @section('title')
 @stop
 
+
 @section('content')
 
         <h1>No Peeking Wish List</h1>

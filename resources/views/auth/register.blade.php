@@ -19,18 +19,33 @@
 
 	<form method='POST' action='/register'>
             {{ csrf_field() }}
-            First Name: 
-	    <input type='text' name='firstname' size='25' value='{{ old('firstname') }}'><br>
-	    Last Name:
-	    <input type='text' name='lastname' size='25' value='{{ old('lastname') }}'><br>
-	    Email:
-	    <input type='text' name='email' size='50' value='{{ old('email') }}'><br>
-	    Password:
-	    <input type='password' name='password' size='50' value='{{ old('password') }}'><br>
-	    Re-enter password again:
-	    <input type='password' name='password_confirmation' size='50' value='{{ old('password_confirmation') }}'><br>
+	 
+	    <div class='form-group'>
+            	<label for='firstname'>First Name:</label></br> 
+		<input type='text' name='firstname' id='firstname' value='{{ old('firstname') }}'>
+	    </div>
 
-            <input type='submit' value='Enter' class='btn btn-primary'><br>
+	    <div clas='form-group'>
+	    	<label for='lastname'>Last Name:</label></br>
+	    	<input type='text' name='lastname' id='lastname' value='{{ old('lastname') }}'>
+	    </div>
+
+	    <div class='form-group'>
+	    	<label for='email'>Email:</label></br>
+	    	<input type='text' name='email' id='email' value='{{ old('email') }}'>
+	    </div>
+
+	    <div class='form-group'>
+	    	<label for='password'>Password:</label></br>
+	    	<input type='password' name='password' id='password' value='{{ old('password') }}'>
+	    </div>
+
+	    <div class='form-group'>
+	    	<label for='password-confirmation'>Re-enter password:</label></br>
+	    	<input type='password' name='password_confirmation' id='password-confirmation' value='{{ old('password_confirmation') }}'>
+	    </div>
+
+            <input type='submit' value='Enter' class='btn btn-primary'></br>
 	
 	@if(count($errors) > 0)
 		<div class="errors">

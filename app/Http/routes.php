@@ -26,7 +26,9 @@ Route::get('/', function () {
 |
 */
 
-
+	# ````````````````````````````````````````````
+	#	Authentication Routes
+	# ````````````````````````````````````````````
 
 	Route::get('/login', 'Auth\AuthController@getLogin');
 	Route::post('/login', 'Auth\AuthController@postLogin');
@@ -36,8 +38,11 @@ Route::get('/', function () {
 
 	Route::get('/logout', 'Auth\AuthController@logout');
 
+	# `````````````````````````````````````````````
+	# 	Wishlist routes - for logged in users
+	# `````````````````````````````````````````````
+
 	Route::group(['middleware' => 'auth'], function() {
-		Route::post('/wishlist', 'WishlistController@postWishlist');
 		Route::get('/wishlist', 'WishlistController@getWishlist');
 
 		Route::get('/wishlist/create', 'WishlistController@getCreate'); 
@@ -65,12 +70,3 @@ Route::get('/', function () {
 
 
 
-	$user = Auth::user();
-
-/*	if($user) {
-/		echo 'You are logged in.';
-/	else {
-/		echo 'You are not logged in.';
-/	}
-/	return;
-*/

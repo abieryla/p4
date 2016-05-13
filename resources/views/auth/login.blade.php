@@ -11,15 +11,22 @@
 
 	<form method='POST' action='/login'>
             {{ csrf_field() }}
-	    <div class="errors">
-            {{$errors->first('password') }} <br>	    
-	    </div>
-	    Email:
-	    <input type='text' name='email' size='50' value='{{ old('email') }}'><br>
-	    Password:
-	    <input type='password' name='password' size='50' value='{{ old('password') }}'><br>
 
-            <input type='submit' value='Enter' ><br>
+	    <div class="errors">
+	        {{$errors->first('password') }} <br>	    
+	    </div>
+
+	    <div class='form-group'>
+	    	<label for='email'>Email:</label></br>
+	    	<input type='text' name='email' id='email'  value='{{ old('email') }}'>
+	    </div>
+
+	    <div class='form-group'>
+	   	<label form='password'>Password:</label></br>
+	    	<input type='password' name='password' id='password' value='{{ old('password') }}'>
+	    </div>
+
+            <input type='submit' value='Enter' class='btn btn-primary'><br>
 	
 	@if(count($errors) > 0)
 		<div class="errors">
