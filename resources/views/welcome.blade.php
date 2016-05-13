@@ -7,7 +7,7 @@
 
 @section('content')
 
-        <h1>No Peeking Wish List</h1>
+        <h1>No Peeking Wishlist</h1>
 	<p>Do you hate knowing all your gifts before you even open them? Do you wish you had more self control and didn't "peek"? The No Peeking Wish List 
 	is for you! </br> It's simple...
 	<ol>
