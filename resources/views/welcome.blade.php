@@ -15,6 +15,7 @@
 		<li> Create a "circle" of friends and family to share your list with and they will be emailed the instructions on how to access your lists. 
 		You'll never see what has been purchased on your list - only the circle will.
 		<li> Get started <a href="/register"> Register</a>.  Already have an account? <a href="/login"> Login</a>. 
+		<li> ** Known quirk of this site ** If you are already logged in this page will not take you to the wishlist so please click here - <a href="/wishlist"> Already Logged in!</a>. 
 	</ol>
 	</p>
 @stop
