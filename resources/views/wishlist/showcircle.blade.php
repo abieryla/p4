@@ -56,7 +56,7 @@
 			       </div>
 
 			       <div class="col-sm-2">                  			       
-                                   <a href='{{ $item->purchase_link}}'>click here to purchase</a>
+                                   <a href='{{ $item->purchase_link}}' target='_blank'>click here to purchase</a>
 			       </div>                             
 			     
   			       <div class="col-sm-1">
